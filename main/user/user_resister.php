@@ -1,6 +1,5 @@
 <?php
 ini_set('display_errors', 1);
-require_once '../../class/dbc.php';
 require_once '../../class/User.php';
 $dbc = new User();
 $message = $_POST;

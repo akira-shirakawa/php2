@@ -103,7 +103,7 @@ if($_POST){
                         <article class="message">
                             <div class="message-header">
                                 <p><?php echo $value['title'] ?></p>
-                                <button class="delete" aria-label="delete"></button>
+                              
                             </div>
                             <div class="message-body">
                             <?php echo $value['content'] ?>

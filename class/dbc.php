@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 1);
-require_once '../env.php';
+require_once dirname(__FILE__).'/../env.php';
 
 Class Db{
     protected $table_name;
