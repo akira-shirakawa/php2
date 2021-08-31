@@ -1,8 +1,8 @@
 <?php
 ini_set('display_errors', 1);
 session_start();
-require_once '../class/User.php';
-require_once '../class/Message.php';
+require_once '../Class/User.php';
+require_once '../Class/Message.php';
 $id = $_GET['id'];
 $user = new User();
 $message = new Message();
@@ -121,7 +121,7 @@ if($_POST){
             </div>
             <div class="box js-hidden-target is-hidden">
                 <p>名前を変更</p>
-                <form action="../main/user/change_user_name.php" method="post">
+                <form action="../Main/User/change_user_name.php" method="post">
                 <input type="text" name="user_name"value="<?php echo $_SESSION['user_name']?>" class="input" >
                 <input type="hidden" name="id" value="<?php echo $_SESSION['user_id'] ?>">
                 <input type="hidden" name="id2" value="<?php echo $id ?>">

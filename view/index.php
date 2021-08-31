@@ -1,8 +1,8 @@
 <?php
 ini_set('display_errors', 1);
 session_start();
-require_once '../class/User.php';
-require_once '../class/Message.php';
+require_once '../Class/User.php';
+require_once '../Class/Message.php';
 $user = new User();
 $message = new Message();
 $content = $message->getMessage();
@@ -30,7 +30,7 @@ if($_POST){
         <div class="modal-content">
             <!-- Any other Bulma elements you want -->
             <div class="box modal-css-margin">
-                <form action="../main/message/create_message.php" method="post">
+                <form action="../Main/Message/create_message.php" method="post">
                         <p>タイトル</p>
                         <input type="text" name="title" class="input" required>
                         <p>内容</p>

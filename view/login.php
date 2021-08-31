@@ -1,8 +1,12 @@
 <?php
 ini_set('display_errors', 1);
 session_start();
-require_once '../class/User.php';
+require_once '../Class/User.php';
 User::redirect('index.php');
+$login_error = $_SESSION['login_error'] ?? '';
+$error = $_SESSION['error'] ?? '';
+$_SESSION = array();
+session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -55,9 +59,9 @@ User::redirect('index.php');
             </div>
             <div class="box">
             <div class="error has-text-danger">
-                 <?php echo $_SESSION['login_error'] ?? ''?>
+                 <?php echo $login_error?><?php echo $error?>
             </div>
-                <form action="../main/user/user_login.php" method="post">                 
+                <form action="../Main/User/user_login.php" method="post">                 
                     <p>メールアドレス</p>
                     <input type="e-mail" name="email" class="input" required>
                     <p>パスワード</p>

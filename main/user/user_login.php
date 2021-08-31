@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 1);
-require_once '../../class/User.php';
+require_once '../../Class/User.php';
 $dbc = new User();
 $message = $_POST;
 
@@ -10,12 +10,12 @@ if($conf[0]['email'] == $_POST['email'] && $conf[0]['password'] == $_POST['passw
     session_start();
     $_SESSION['user_id'] = $conf[0]['id'];
     $_SESSION['user_name'] = $conf[0]['name'];
-    header('Location:../../view/index.php');
+    header('Location:../../View/index.php');
     return;
 }
 session_start();
 $_SESSION['login_error'] = 'パスワードまたはメールアドレスが正しくありません';
-header('Location:../../view/login.php');
+header('Location:../../View/login.php');
 return;
 
 

@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 1);
-require_once 'dbc.php';
+require_once 'Dbc.php';
 Class Message extends DB{
     protected $table_name;
     function __construct(){

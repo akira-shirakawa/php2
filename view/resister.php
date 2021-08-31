@@ -1,9 +1,11 @@
 <?php
-require_once '../class/User.php';
+require_once '../Class/User.php';
 session_start();
+$error = $_SESSION['error'] ?? '';
+$_SESSION = array();
+session_destroy();
 $user = new User();
 $user::redirect('index.php');
-
 
 ?>
 <!DOCTYPE html>
@@ -60,8 +62,8 @@ $user::redirect('index.php');
             <p class="is-size-2">新規登録</p>
             </div>
             <div class="box">
-            <?php echo $_SESSION['error'] ?? '' ?>
-                <form action="../main/user/user_resister.php" method="post">
+            <?php echo  $error ?>
+                <form action="../Main/User/user_resister.php" method="post">
                     <p>名前</p>
                     <input type="text" name="name" class="input" required>
                     <p>メールアドレス</p>

@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 1);
-require_once 'dbc.php';
+require_once 'Dbc.php';
 require_once 'Message.php';
 Class User extends Db{
     protected $table_name;

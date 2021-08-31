@@ -8,5 +8,5 @@ $stmt = $user->dbc()->prepare($sql);
 $stmt->execute([$_POST['user_name'],$_POST['id']]);
 session_start();
 $_SESSION['user_name'] = $_POST['user_name'];
-header("Location:../../view/user.php?id=$id");
+header("Location:../../View/user.php?id=$id");
 return;
