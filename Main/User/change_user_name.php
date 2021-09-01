@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 1);
-require_once '../../class/User.php';
+require_once '../../Class/User.php';
 $user = new User();
 $id = (int)$_POST['id2'];
 $sql = "update users set name=? where id = ?";
