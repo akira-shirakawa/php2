@@ -8,8 +8,8 @@ $conf = $dbc->getData($message['email'],'email');
 
 if(!empty($conf)){
     session_start();
-    $_SESSION['error'] = 'すでにこのメールアドレスは登録されています。';
-    header('Location:../../View/login.php');
+    $_SESSION['email_error'] = 'すでにこのメールアドレスは登録されています。';
+    header('Location:../../View/resister.php');
     return;
 }
 if($_POST['password_conf'] != $_POST['password']){

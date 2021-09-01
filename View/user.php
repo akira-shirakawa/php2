@@ -110,7 +110,7 @@ if($_POST){
                             <?php if($value['user_id'] == ($_SESSION['user_id'] ?? '')) :?>
                             <form action="../main/message/delete_message.php" method="post">
                             <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
-                            <input type="hidden" name="id2" value="<?php echo $id  ?>">
+                            <input type="hidden" name="user_id" value="<?php echo $id  ?>">
                             <input type="submit" class="button is-danger" value="消去">
                             </form>
                             <?php endif; ?>

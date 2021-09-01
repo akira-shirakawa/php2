@@ -1,7 +1,7 @@
 <?php
 require_once '../../Class/Message.php';
 $message = new Message();
-$id2 = $_POST['id2'];
+$user_id = $_POST['user_id'];
 $message->delete((int)$_POST['id']);
-header("Location:../../View/user.php?id=$id2");
+header("Location:../../View/user.php?id=$user_id");
 return;

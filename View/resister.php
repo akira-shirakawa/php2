@@ -2,6 +2,7 @@
 require_once '../Class/User.php';
 session_start();
 $error = $_SESSION['error'] ?? '';
+$email_error = $_SESSION['email_error'] ?? '';
 $_SESSION = array();
 session_destroy();
 $user = new User();
@@ -63,10 +64,11 @@ $user::redirect('index.php');
             </div>
             <div class="box">
             <?php echo  $error ?>
+            <?php echo $email_error ?>        
                 <form action="../Main/User/user_resister.php" method="post">
                     <p>名前</p>
                     <input type="text" name="name" class="input" required>
-                    <p>メールアドレス</p>
+                    <p>メールアドレス</p>         
                     <input type="email" name="email" class="input" required>
                     <p>パスワード</p>
                     <input type="password" name="password" class="input" required>
