@@ -63,7 +63,7 @@ session_destroy();
             </div>
                 <form action="../Main/User/user_login.php" method="post">                 
                     <p>メールアドレス</p>
-                    <input type="e-mail" name="email" class="input" required>
+                    <input type="email" name="email" class="input" required>
                     <p>パスワード</p>
                     <input type="password" name="password" class="input" required>
                     <input type="submit" value="送信" class="button">

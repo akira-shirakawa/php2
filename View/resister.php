@@ -67,7 +67,7 @@ $user::redirect('index.php');
                     <p>名前</p>
                     <input type="text" name="name" class="input" required>
                     <p>メールアドレス</p>
-                    <input type="e-mail" name="email" class="input" required>
+                    <input type="email" name="email" class="input" required>
                     <p>パスワード</p>
                     <input type="password" name="password" class="input" required>
                     <p>パスワード確認</p>
