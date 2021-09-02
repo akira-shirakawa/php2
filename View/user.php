@@ -75,6 +75,27 @@ if($_POST){
                 </div>
         </div>
     </nav>
+
+<?php if($user::check()) :?>
+    <div class="modal">
+    <div class="modal-background"></div>
+        <div class="modal-content">
+            <!-- Any other Bulma elements you want -->
+            <div class="box modal-css-margin">
+                <form action="../Main/Message/edit_message.php" method="post">
+                        <p>タイトル</p>
+                        <input type="text" name="title" class="input" id="js-title-target"value=""required>
+                        <p>内容</p>
+                        <input type="textarea" name="content" class="input" id="js-content-target"value="" required>
+                        <input type="hidden" name="user_id" value="<?php echo($_SESSION['user_id'])?>">
+                        <input type="hidden" name="message_id" value="" class="js-value-target">
+                        <input type="submit" value="送信" class="button">
+                    </form>
+            </div>
+        </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+<?php endif ;?>
     <div class="columns">
         <div class="column is-one-quarter">
        
@@ -106,14 +127,18 @@ if($_POST){
                               
                             </div>
                             <div class="message-body">
-                            <?php echo $value['content'] ?>
-                            <?php if($value['user_id'] == ($_SESSION['user_id'] ?? '')) :?>
-                            <form action="../main/message/delete_message.php" method="post">
-                            <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
-                            <input type="hidden" name="user_id" value="<?php echo $id  ?>">
-                            <input type="submit" class="button is-danger" value="消去">
-                            </form>
-                            <?php endif; ?>
+                                <p class="js-message-body-target">
+                                <?php echo $value['content'] ?>
+                                </p>
+                                <?php if($value['user_id'] == ($_SESSION['user_id'] ?? '')) :?>
+
+                                <button class="<?php echo $value['id'] ?> button js-modal-target">編集</button>
+                                <form action="../main/message/delete_message.php" method="post" class="css-short">
+                                <input type="hidden" name="id" value="<?php echo $value['id'] ?>">
+                                <input type="hidden" name="user_id" value="<?php echo $id  ?>">
+                                <input type="submit" class="button is-danger" value="消去">
+                                </form>
+                                <?php endif; ?>
                             </div>
                         </article>
                     </div>
@@ -133,5 +158,6 @@ if($_POST){
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/user.js"></script>
 </body>
 </html>

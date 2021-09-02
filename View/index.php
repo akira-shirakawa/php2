@@ -43,7 +43,7 @@ if($_POST){
         </div>
     <button class="modal-close is-large" aria-label="close"></button>
     </div>
-    <?php endif ;?>
+<?php endif ;?>
     <nav class="navbar" role="navigation" aria-label="main navigation"> 
         <div class="mb-show">
             <?php if(!$user::check()) :?>
