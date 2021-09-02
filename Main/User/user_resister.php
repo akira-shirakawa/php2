@@ -15,6 +15,8 @@ if(!empty($conf)){
 if($_POST['password_conf'] != $_POST['password']){
     session_start();
     $_SESSION['error'] = 'パスワードが一致しません';
+    $_SESSION['user_name'] = $_POST['name'];
+    $_SESSION['user_email'] = $_POST['email'];
     header('Location:../../View/resister.php');
     return;
 }
